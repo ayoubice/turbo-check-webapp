@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 
-
 import {
- Box,
- Heading,
- TextInput,
- Button,
- Grommet,
- ResponsiveContext,
+  Box,
+  Heading,
+  TextInput,
+  Button,
+  Grommet,
+  ResponsiveContext,
 } from 'grommet';
-
-
 
 const theme = {
   global: {
@@ -22,41 +19,34 @@ const theme = {
   },
 };
 
-const Main = (props) => (
-  <Box fill 
+const Main = props => (
+  <Box
+    fill
     direction="column"
-    background='brand'
-     align="center"
-     justify="center"
-
-  >
+    background="brand"
+    align="center"
+    justify="center">
     <Box
-      // wrap="true"
+    // wrap="true"
     >
       <Heading margin="none"> Vehicule checker </Heading>
-      <TextInput
-        id="text-input"
-        placeholder="placeholder"
-        value="Some value"
-      />
+      <TextInput id="text-input" placeholder="placeholder" value="Some value" />
     </Box>
- </Box>
-)
+  </Box>
+);
 
 class App extends Component {
- state = {
-   showSidebar: false,
- }
+  state = {
+    showSidebar: false,
+  };
 
- render(){
+  render() {
     return (
       <Grommet theme={theme} full>
         <ResponsiveContext.Consumer>
-          {size => (
-            <Main />
-          )}
+          {size => <Main />}
         </ResponsiveContext.Consumer>
-  </Grommet>
+      </Grommet>
     );
   }
 }
